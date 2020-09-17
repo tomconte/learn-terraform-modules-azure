@@ -40,3 +40,10 @@ module "linuxservers" {
 
   depends_on = [azurerm_resource_group.rg]
 }
+
+module "azure-storage-static-website" {
+  source               = "./modules/azure-storage-static-website"
+  storage_account_name = "tcostaticweb"
+  resource_group_name  = azurerm_resource_group.rg.name
+  location             = var.location
+}
