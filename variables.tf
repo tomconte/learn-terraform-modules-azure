@@ -12,7 +12,7 @@ variable "admin_password" {
 variable "rg_name" {
   description = "Name of Resource Group"
   type        = string
-  default     = "example-vnet"
+  default     = "tf-example"
 }
 
 variable "location" {
