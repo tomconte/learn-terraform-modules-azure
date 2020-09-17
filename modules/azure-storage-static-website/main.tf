@@ -11,3 +11,21 @@ resource "azurerm_storage_account" "static_website" {
     error_404_document = "error.html"
   }
 }
+
+resource "azurerm_storage_blob" "index_file" {
+  name                   = "index.html"
+  storage_account_name   = azurerm_storage_account.static_website.name
+  storage_container_name = "$web"
+  type                   = "Block"
+  source                 = var.index_file
+  content_type           = "text/html"
+}
+
+resource "azurerm_storage_blob" "error_file" {
+  name                   = "error.html"
+  storage_account_name   = azurerm_storage_account.static_website.name
+  storage_container_name = "$web"
+  type                   = "Block"
+  source                 = var.error_file
+  content_type           = "text/html"
+}

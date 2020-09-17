@@ -46,4 +46,6 @@ module "azure-storage-static-website" {
   storage_account_name = "tcostaticweb"
   resource_group_name  = azurerm_resource_group.rg.name
   location             = var.location
+  index_file           = "www/index.html"
+  error_file           = "www/error.html"
 }

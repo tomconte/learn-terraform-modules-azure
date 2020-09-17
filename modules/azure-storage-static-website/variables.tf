@@ -12,3 +12,11 @@ variable "location" {
   description = "Location where the storage account will be created."
   type        = string
 }
+
+variable "index_file" {
+  type        = string
+}
+
+variable "error_file" {
+  type        = string
+}
